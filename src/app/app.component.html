@@ -1,8 +1,30 @@
 <div>
   <button (click)="ngOnDestroy()">Go Offline</button>
+
+  <input type="text" (keyup.enter)="add(course)" #course />
   <ul>
     <li *ngFor="let course of courses">
       {{ course }}
+    </li>
+  </ul>
+
+  <!-- <ul>
+    <li *ngFor="let course of courses$">
+      {{ course.$value }}
+    </li>
+  </ul> -->
+  <p>
+    {{ author$ | json }}
+  </p>
+  <!-- <p>
+    {{ author$.firstname }}
+  </p> -->
+  <ul *ngIf="author$ as a">
+    <li>
+      {{ a.firstname }}
+    </li>
+    <li>
+      {{ a.year }}
     </li>
   </ul>
 </div>
